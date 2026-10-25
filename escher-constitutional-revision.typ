@@ -164,7 +164,7 @@ All other spaces within the House are to be considered House spaces.
 == Definition of Occupancy
 “Low Occupancy” shall be taken to mean that the current number of  members living in the house is fewer than 50% of the current house capacity.
 == Open and Restricted Spaces
-Members of the House may freely use all common spaces, except for  boiler rooms, machinery rooms, the maintenance room, two (2) kitchens, pop room, and the office. The trunk room is accessible for storage of personal items via the Suite Managers or any of the House officers.
+Members of the House may freely use all common spaces, except for  boiler rooms, machinery rooms, the maintenance room, two (2) kitchens, #del[pop room, ]and the office. The trunk room is accessible for storage of personal items via the Suite Managers or any of the House officers.
 == Gender in the House
 Members' gender shall be considered private health information, and  may not be requested by house officers in an official capacity.
 = Membership
