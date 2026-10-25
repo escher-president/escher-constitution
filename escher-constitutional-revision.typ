@@ -315,9 +315,9 @@ Proxies shall not be held by the facilitator of a forum.
 ====
 No absentee ballots will be allowed.
 = House Labor
-== Definitions of Chore Labor
+== Definitions of Chore Labor <4.1>
 ===
-The Work Manager shall allocate work according to a system which  ensures that all members, unless specifically stated below, provide  three (3) hours of House chore labor per week to guarantee the  proper operation of the House. Members are required to participate in  four (4) areas of House work: House chores, Suite chores, bathroom cleans, and Work Holiday.
+The Work Manager shall allocate work according to a system which ensures that all members, unless specifically stated below, provide  three (3) hours of House chore labor per week to guarantee the proper operation of the House. Members are required to participate in four (4) areas of House work: House chores, Suite chores, bathroom cleans, and Work Holiday.
 ===
 House chores shall include, but are not necessarily limited to:
 ==== Kitchen Work
@@ -349,7 +349,17 @@ Work Holiday shall be initiated by the President and coordinated by  officers at
 The purpose of Work Holiday is to perform jobs which do not need to be done weekly and are usually larger than regular House chores.
 ====
 Each House member shall sign up for an equal amount of Work  Holiday labor, which shall equal 4 hours per Work Holiday unless otherwise specified by standing rule.
-== Missed Labor <4.2>
+#add[
+    == Labor Training
+    As determined by standing rule, members are required to participate in labor training hours in addition to those outlined in @4.1. These additional hours may only be allocated for member education on properly performing the tasks required of them by Escher House.
+    ===
+    Training hours may be instated as prerequisite to the completion of other labor hours in the house.
+    ===
+    Training hours are subject to the missed labor policy outlined in @4.3. If not explicitly defined by standing rule, a missed prerequisite training should count as an absence if the member has not completed that training at the start of the corresponding shift or the deadline for a corresponding chore.
+    ===
+    If not explicitly defined by standing rule, the Education Chair (or Secretary during periods of low occupancy) is responsible for tracking the status of and enforcing training completion.
+]
+== Missed Labor <4.3>
 ===
 If a member is unable to perform their work, they must find a  substitute or be excused by the Work Manager. This applies regardless  of the type of work. Absences which are not excused shall result in  penalties as follows:
 ====
@@ -462,7 +472,7 @@ Coordinates monthly meetings of Suite Managers.
 ====
 Provides an agenda to Suite Managers for each suite meeting. 
 ====
-Oversees all Suite Managers. Vice President of Suites shall fine any  Suite Manager not performing adequately according to @4.2.
+Oversees all Suite Managers. Vice President of Suites shall fine any  Suite Manager not performing adequately according to @4.3.
 ====
 Each Vice President shall chair one of the two House forums
 === Vice President of Relations 
@@ -529,7 +539,7 @@ Distributes work surveys to members and schedules them (so far  as possible) to 
 ====
 Responsible for setting up a procedure for trading work shifts and  replacing a crew member who has not shown up for work in  consultation with shift leads. 
 ====
-Fines according to @4.2.
+Fines according to @4.3.
 === Kitchen Manager
 ====
 Responsible to President and House. 
@@ -538,7 +548,7 @@ Arranges a schedule in the beginning of the semester to train  kitchen crews. Sh
 ====
 Designates a crew leader for each cleaning crew to ensure that that  cleaning crew has done its job properly. 
 ====
-Fines delinquent kitchen crews according to @4.2. 
+Fines delinquent kitchen crews according to @4.3. 
 ==== 
 Works with the chef to prepare for inspection by the Health  Department. Makes sure the kitchen passes inspection. 
 ====
@@ -559,7 +569,7 @@ Oversees Escher maintenance crew and tasks.
 ====
 Checks that the conditions around the House are not detrimental to  the recruitment of new members. 
 ====
-Fines delinquent maintenance crews according to @4.2. 
+Fines delinquent maintenance crews according to @4.3. 
 ====
 Assists the ICC staff and the City of Ann Arbor in conducting  building inspections. Makes sure the House passes building  inspections. 
 ====
@@ -587,7 +597,7 @@ Supervises Escher Tech Team, prioritizes tasks and fulfills house  technology re
 ====
 Innovates new ideas for technology related improvements in the  House. 
 ====
-Fines Escher Tech Team members for not performing assigned tasks or performing them poorly according to @4.2. 
+Fines Escher Tech Team members for not performing assigned tasks or performing them poorly according to 3. 
 ====
 Responsible for maintenance and documentation of House technology infrastructure. 
 ====
