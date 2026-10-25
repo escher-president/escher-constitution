@@ -26,6 +26,27 @@
     date: datetime(year: 2025, month: 10, day: 01)
 )
 
+// Define custom revision functions
+#let del(body) = text(fill: red, strike(body))
+#let add(body) = text(fill: blue, strong(body))
+
+// --- TOGGLE REVISIONS ON/OFF ---
+// Set to 'true' to show tracking (strikethrough/bold) 
+// Set to 'false' to hide tracking (render final clean version)
+#let show-revisions = true
+
+// Show rules to handle behavior globally
+#show: body => {
+  if show-revisions {
+    body
+  } else {
+    // When false: completely hide deletions, make additions normal text
+    show del: none
+    show add: set text(fill: black, weight: "regular")
+    body
+  }
+}
+
 #show outline.entry: it => {
     let loc = it.element.location()
     let page-num = counter(page).at(loc).first()
