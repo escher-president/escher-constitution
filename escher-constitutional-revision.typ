@@ -47,6 +47,22 @@
   }
 }
 
+// --- AUTOMATIC REVISION BARS (MARGIN LINES) ---
+// This show rule automatically draws a vertical red bar next to paragraphs containing proposed changes
+#show par: it => {
+  if show-revisions and (it.has("children") and it.children.any(c => c.has("label") and (c.label == <edit>))) {
+    grid(
+      columns: (4pt, 1fr),
+      gutter: 8pt,
+      line(angle: 90%, length: 100%, stroke: 1.5pt + rgb("b32424")),
+      it
+    )
+  } else {
+    it
+  }
+}
+
+
 #show outline.entry: it => {
     let loc = it.element.location()
     let page-num = counter(page).at(loc).first()
