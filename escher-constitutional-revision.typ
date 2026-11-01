@@ -284,13 +284,13 @@ All house members must be able to access house ballots.
 ====
 Online ballots shall accept responses for a period of 72 hours.
 ====
-The ballot shall contain a review of the relevant forum minutes#del[,] #add[and] a clear statement of the proposal to be voted on#del[,]#add[.] #del[and]#add[For single-option proposals, the ballot shall contain] spaces to vote “yes,” “no,” and “abstain.” #add[For multi-option proposals, the ballot shall contain spaces to numerically rate each option on a scale from -5 to 5, with -5 representing strongly against, 5 representing strongly for, and 0 representing abstain. Voters may select any number in this range for each option.]
+The ballot shall contain a review of the relevant forum minutes#del[,] #add[and] a clear statement of the proposal to be voted on#del[,]#add[.] #del[and]#add[For single-option proposals, the ballot shall contain] spaces to vote “ye#del[s]#add[a],” “n#del[o]#add[ay],” and “abstain.” #add[For multi-option proposals, the ballot shall contain spaces to numerically rate each option on a scale from -5 to 5, with -5 representing strongly against, 5 representing strongly for, and 0 representing abstain. Voters may select any number in this range for each option.]
 ====
 For the purpose of increasing access to house votes, a standing rule may be established to create an offline or in-person alternative to an online ballot.
 ===
 #add[For a single-option proposal, t]#del[T]he proposal passes if a majority of the votes cast, excluding votes cast as abstain, are in the affirmative. #del[In the event of a multi-option proposal, should multiple mutually exclusive voting options pass, the option that receives the most “yes” votes shall pass.]#add[For a multi-option proposal, the option receiving the most rating points summed across all voters will pass.]
 ===
-#add[For a single-option proposal, i]#del[I]n the event of a tie, the proposal shall fail. #add[For a multi-option proposal, in the event of a tie, the proposer may break the tie. For ties in elections, a runoff election is held immediately.]
+#add[For a single-option proposal, i]#del[I]n the event of a tie, the proposal shall fail. #add[For a multi-option proposal, in the event of a tie, the proposer may break the tie. For ties in elections, a runoff election is held immediately. (See @5.5)]
 ===
 For a vote to be valid, 1/3 of the House must vote.
 ===
@@ -655,7 +655,7 @@ This meeting shall be open to all members contracted for the applicable term, an
 Essential House Officers are here defined as positions which require at least 1 member to serve as them during the applicable contract period according to section 5.1.
 ====
 If any essential positions #add[for Fall/Winter ]are not filled by this deadline, another  election will be held no later than 3 weeks before the beginning of the Fall/Winter contract period. This meeting will be #del[held virtually]#add[accessible to all contracted members ], with incoming Fall/Winter members notified at least 2 weeks in  advance and able to vote in the resulting ballot. 
-===
+=== <5.5.2>
 If any position is not filled by the start of a contract period, an  election shall be held within two weeks to elect the vacant officer  positions. 
 ===
 Nominations for all officers shall be open for a period of no less than  one week. Nomination sheets must include a listing of the duties of  the given officer position.
@@ -670,21 +670,34 @@ No nominations may be made or accepted for a position after private discussion h
 ===
 #add[
     Contested elections are voted on as multi-option proposals. Uncontested elections are voted on as single-option proposals. (See @3.3) An election counts as contested only if there are more candidates running than there are vacancies in a specific position.
-    ===
-    Candidates who recieve a a number of points less than or equal to 0 shall not be elected, even if seats are available.
 ]
 #del[
     For elections where only one candidate will be elected, the nominee  receiving the majority of votes becomes the officer for that position. If no member receives the majority of votes for an office, then the  two members receiving the highest number of votes shall engage in a runoff election to be held immediately after the first vote.
+]
 ===
-For elections wherein more than one candidate will be elected, the selection of Co-Officers for positions shall be conducted through an  approval voting system employing the first-past-the-post methodology.
+#del[For elections wherein more than one candidate will be elected, the selection of Co-Officers for positions shall be conducted through an  approval voting system employing the first-past-the-post methodology.]
+#add[
+    In an uncontested election, if the candidate recieves a majority "yea" votes, excluding "abstain" votes, the candidate is selected and removed from the candidate pool. In a contested election, the candidate with the most voting points is selected and removed from the candidate pool. This process is repeated until all seats are filled.
+]
+
 ====
-Under this system, voters may indicate approval for as many  candidates as they wish.  
+#del[
+Under this system, voters may indicate approval for as many candidates as they wish.
+]
+#add[
+    If a selected candidate accepts their selection, they are elected to the position. If a selected candidate rejects their selection, the process outlined above is repeated until all seats are filled. If there are no more candidates to select, see @5.5.2 and @5.6. An absence of an acceptance or rejection from a candidate within 48 hours of ballot results being posted will count as an acceptance.
+]
 ====
-The candidates who receive the most approvals shall be elected to  fill the available seats for the respective position.
+#del[The candidates who receive the most approvals shall be elected to  fill the available seats for the respective position.]
+#add[
+In an uncontested election, candidates who do not recieve a majority of "yea" votes, excluding "abstain" votes, shall not be selected, even if seats are available.
+In a contested election, candidates who recieve a a number of voting points less than or equal to 0 shall not be selected, even if seats are available.
+]
 ====
+#del[
 Candidates who fail to receive more “yes” votes than “no” votes  shall not be elected, even if seats are available.
 ]
-== Filling of Vacant Offices
+== Filling of Vacant Offices <5.6>
 ===
 If an essential officer position becomes vacant for any reason, calls for nomination shall be posted as soon as possible, and an emergency election shall be held between 7 and 10 days of this posting. This election shall be held in the same manner as a regular  election.
 ===
