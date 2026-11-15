@@ -106,6 +106,7 @@ Cooperatives serve their members most effectively and strengthen the  cooperativ
 Cooperatives work for the sustainable development of their  communities through policies approved by their members.
 
 #set heading(numbering: "1.1")
+#set par(first-line-indent: 0em, hanging-indent: 1em)
 #show heading.where(level: 1): set heading(supplement: [Article])
 #show heading: it => {
     let number = counter(heading).display(it.numbering)
@@ -124,7 +125,7 @@ Cooperatives work for the sustainable development of their  communities through 
     }
 }
 
-// Indent all subsequent paragraphs to match the active heading
+Indent all subsequent paragraphs to match the active heading
 #show par: it => context {
     let ind = current-indent.get()
     if ind > 0em {
