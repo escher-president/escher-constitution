@@ -29,6 +29,7 @@
 // Define custom revision functions
 #let del(body) = text(fill: red, strike(body))
 #let add(body) = text(fill: blue, strong(body))
+#let current-indent = state("indent", 0em)
 
 // --- TOGGLE REVISIONS ON/OFF ---
 // Set to 'true' to show tracking (strikethrough/bold) 
@@ -103,13 +104,37 @@ Cooperatives provide education and training for their members,  elected represen
 Cooperatives serve their members most effectively and strengthen the  cooperative movement by working together through local, national, regional  and international structures. 
 #heading(outlined: false, depth: 2)[Concern for Community]
 Cooperatives work for the sustainable development of their  communities through policies approved by their members.
+
 #set heading(numbering: "1.1")
-#show heading.where(level: 1): set heading(supplement: [Article]) 
-#show heading.where(level: 2): set heading(supplement: [Section])
+#show heading.where(level: 1): set heading(supplement: [Article])
 #show heading: it => {
     let number = counter(heading).display(it.numbering)
-    block[#it.supplement #number: #it.body]
+    let indent = calc.max(0em, 1em * (it.level - 2))
+    current-indent.update(indent)
+
+    // Ensure the heading starts on a fresh block with the right indent
+
+    if it.level <=2 {
+        block[#it.supplement #number: #it.body]
+    } else if it.level == 2 {
+        block[#it.supplement #number: #it.body]
+    } else {
+        parbreak()
+        [#number: #it.body]
+    }
 }
+
+// Indent all subsequent paragraphs to match the active heading
+#show par: it => context {
+    let ind = current-indent.get()
+    if ind > 0em {
+        pad(left: ind, it)
+    } else {
+        it
+    }
+}
+
+
 = General
 == House Name
 The name of the group which operates under this constitution is the 
@@ -196,7 +221,7 @@ House members are responsible for attending House forums.
 ===
 House members are responsible for attending Suite Meetings. If unable to attend they must give 24 hour notice to their respective Suite Manager. 
 ===
-Members who fail to fulfill this requirement shall be fined \$Y. (as  defined by @9.3.8).
+Members who fail to fulfill this requirement shall be fined \$Y. (as defined by @9.3.8).
 == Personal Disputes
 ===
 Members should attempt to resolve disputes among themselves, but may wish to consult with a Suite Manager or other Officer to assist in mediation.
