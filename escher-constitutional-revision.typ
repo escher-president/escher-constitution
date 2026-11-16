@@ -29,7 +29,19 @@
 // Define custom revision functions
 #let del(body) = text(fill: red, strike(body))
 #let add(body) = text(fill: blue, strong(body))
-#let current-indent = state("indent", 0em)
+#let active-heading = state("active-heading", none)
+#let in-par-rule = state("in-par-rule", false)
+#let heading-printed = state("heading-printed", false)
+#let in-indent-rule = state("in-indent-rule", false)
+
+// Helper to format a depth 3+ heading label
+#let format-inline-heading(h, number) = {
+  let supp = if h.depth >= 3 { [] } else { [#h.supplement ] }
+  strong[#supp#number: #h.body]
+  if h.body != [] {
+    linebreak()
+  }
+}
 
 // --- TOGGLE REVISIONS ON/OFF ---
 // Set to 'true' to show tracking (strikethrough/bold) 
@@ -106,35 +118,75 @@ Cooperatives serve their members most effectively and strengthen the  cooperativ
 Cooperatives work for the sustainable development of their  communities through policies approved by their members.
 
 #set heading(numbering: "1.1")
-#set par(first-line-indent: 0em, hanging-indent: 1em)
-#show heading.where(level: 1): set heading(supplement: [Article])
-#show heading: it => {
-    let number = counter(heading).display(it.numbering)
-    let indent = calc.max(0em, 1em * (it.level - 2))
-    current-indent.update(indent)
+#show heading.where(depth: 1): set heading(supplement: [Article])
+#show heading: it => context {
+  active-heading.update(it)
+  let number = counter(heading).display(it.numbering)
 
-    // Ensure the heading starts on a fresh block with the right indent
+  if it.depth <= 2 {
+    heading-printed.update(true)
+    block[#it.supplement #number: #it.body]
+  } else {
+    // Look ahead for the next content block (heading, paragraph, list, enum, or table)
+    let upcoming = query(
+      selector.or(heading, par, list, enum, table).after(here())
+    )
+    // Filter out the current heading itself if matched at the exact location
+    let next-el = upcoming.find(el => el.location() != it.location())
 
-    if it.level <=2 {
-        block[#it.supplement #number: #it.body]
-    } else if it.level == 2 {
-        block[#it.supplement #number: #it.body]
+    // Inline into the next paragraph ONLY if a paragraph immediately follows
+    if next-el != none and next-el.func() == par {
+      heading-printed.update(false)
+      parbreak()
     } else {
-        parbreak()
-        [#number: #it.body]
+      // Otherwise (followed by another heading, list, table, or end of doc), render it now
+      heading-printed.update(true)
+      let indent = calc.max(0, it.level - 2)
+      let supp = if it.depth >= 3 { [] } else { [#it.supplement] }
+      in-indent-rule.update(true)
+      pad(left: 1em * indent)[#supp #number: #it.body]
+      in-indent-rule.update(false)
     }
+  }
 }
 
-Indent all subsequent paragraphs to match the active heading
+// Indent paragraphs and prepend deferred depth 3+ headings
 #show par: it => context {
-    let ind = current-indent.get()
-    if ind > 0em {
-        pad(left: ind, it)
-    } else {
-        it
+  if in-indent-rule.get() { return it }
+
+  let h = active-heading.get()
+  if h == none or h.depth <= 2 { return it }
+
+  let number = counter(heading).display(h.numbering)
+  let indent = calc.max(0, h.level - 2)
+  let already-printed = heading-printed.get()
+
+  if not already-printed {
+    heading-printed.update(true)
+  }
+
+  in-indent-rule.update(true)
+  pad(left: indent * 1em)[
+    #if not already-printed {
+      format-inline-heading(h, number)
     }
+    #it.body
+  ]
+  in-indent-rule.update(false)
 }
 
+// Indent bullet lists, numbered lists, and tables to match the active depth 3+ heading
+#show selector.or(list, enum, table): it => context {
+  if in-indent-rule.get() { return it }
+
+  let h = active-heading.get()
+  if h == none or h.depth <= 2 { return it }
+
+  let indent = calc.max(0, h.level - 2)
+  in-indent-rule.update(true)
+  pad(left: indent * 1em, it)
+  in-indent-rule.update(false)
+}
 
 = General
 == House Name
@@ -250,8 +302,10 @@ The member or member's significant other has become pregnant.  The automatic rel
 The member dies.
 ===
 A member may request that they be released from House charges or  labor for any reason as follows: 
-+ A written request must be presented to the President. This request must specify the grounds for release, as well as a date when the release would be effective.
-+ At the next regularly scheduled House meeting, the House membership shall decide the issue vote (See @3.3). 
+====
+A written request must be presented to the President. This request must specify the grounds for release, as well as a date when the release would be effective.
+====
+At the next regularly scheduled House meeting, the House membership shall decide the issue vote (See @3.3). 
 ===
 A member who is released from full House charges is expected to  vacate their room and the building on the effective date of the  release.
 ===
