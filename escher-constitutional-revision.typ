@@ -480,8 +480,9 @@ Any member who works for an unexcused absent member shall  receive \$X dollars p
 Members have a right to reasonable accommodation in the house and  in their labor. To this end, good faith requests for accommodation for  disability (temporary or permanent) to the work manager or suite  managers regarding house or suite chores shall be honored. Should  there be a dispute with regards to this rule, the president shall call the  Judiciary Committee to make a decision.
 = House Officers
 == Officer and Co-Officer Limits
-==
+// Remove empty section
 All officers shall begin their terms on the first day of the contract period  for which they were elected. Co-officerships shall be limited according to the following table:
+#del[
 #table(columns: 3, 
   table.header([*Position*], [*Normal Occupancy*], [*Low Occupancy*]),
   [House President], [2], [1],
@@ -490,7 +491,7 @@ All officers shall begin their terms on the first day of the contract period  fo
   [Board Representatives], [5], [3],
   [Secretary], [1], [1],
   [Work Manager], [1], [1],
-  [Kitchen Manager], [1], [1],
+  [Kitchen Manager], [2], [2],
   [Maintenance Manager], [2], [1],
   [Sustainability Steward], [1], [0],
   [Social Chair], [1], [0],
@@ -498,6 +499,25 @@ All officers shall begin their terms on the first day of the contract period  fo
   [Technology Advisor], [1], [0],
   [Cooperative Health Coordinator], [1], [0]
 )
+]
+#add[
+#table(columns: 4, 
+  table.header([*Position*], [*Fall/Winter*], [*Winter/Fall*], [*Low Occupancy*]),
+  [House President], [1], [1], [1],
+  [Vice Presidents], [2], [0], [1],
+  [Treasurer], [1], [1], [1],
+  [Board Representatives], [5], [0], [3],
+  [Secretary], [1], [0], [1],
+  [Work Manager], [1], [1], [1],
+  [Kitchen Manager], [1], [1], [2],
+  [Maintenance Manager], [1], [1], [1],
+  [Sustainability Steward], [1], [0], [0],
+  [Social Chair], [1], [0], [0],
+  [Education Chair], [1], [1], [1],
+  [Technology Advisor], [1], [0], [0],
+  [Cooperative Health Coordinator], [1], [0], [0]
+)
+]
 ===
 Co-Officers will divide the labor required for a role as necessary. For  example, if 2 officers are serving as president, they may  cooperatively decide which will preside over the judiciary committee,  which will preside over the counting of house meeting ballots, and  which will run officer meetings.
 == Assistants
@@ -508,7 +528,7 @@ There shall be at least 1 Assistant to the President
 ===
 There shall be at least 1 Assistant to the Work Manager
 ===
-There shall be at least 4 Assistant Kitchen Managers
+There shall be at least #del[4]#add[1] Assistant Kitchen Manager#del[s].
 ===
 There shall be at least 1 Assistant to the Social Chair
 ===
@@ -526,7 +546,7 @@ Represents the House in relations with other co-op houses, all ICC  staff, Esche
 ====
 Has overall responsibility for House operations. Sees that officers  and committees perform their functions. 
 ====
-Provides Vice Presidents with agenda for House forums.
+Provides #del[Vice Presidents with] agenda for House forums #add[and may preside over House forums].
 ====
 Presides at Officer Meetings and ensures that tasks are properly  delegated and executed. Presides over all joint House Council Officer Meetings. 
 ====
@@ -545,7 +565,7 @@ Provides an agenda to Suite Managers for each suite meeting.
 ====
 Oversees all Suite Managers. Vice President of Suites shall fine any  Suite Manager not performing adequately according to @4.2.
 ====
-Each Vice President shall chair one of the two House forums
+#del[Each Vice President shall chair one of the two House forums.]#add[May preside over House forums.]
 === Vice President of Relations 
 ==== 
 Responsible to President and House. 
@@ -554,7 +574,7 @@ Coordinates rooming and member rosters with the ICC front desk.
 ==== 
 Oversees move-in/move-out for non-standard contracts or contract releases. 
 ====
-Each Vice President shall chair one of two consecutive House forums.
+#del[Each Vice President shall chair one of two consecutive House forums.]#add[May preside over House forums.]
 ====
 Ensures that all occupancy changes are forwarded to the President, Treasurer, Suite Managers and Work Manager.
 ====
@@ -726,7 +746,7 @@ Assign an isolation bathroom that suite and provide  signage on the bathroom.
 Ensure that quarantining people have access to food, supplies, and other help.
 == Elections <5.5>
 ===
-Essential House Officers for the Fall/Winter and Spring/Summer contract periods shall be elected no later than two weeks before the  end of the preceding Winter semester. 
+Essential House Officers for the Fall/Winter and Spring/Summer contract periods shall be elected no later than two weeks before the end of the preceding Winter semester. #add[Essential House Officers for the Winter/Fall contract period shall be elected no later than two weeks before the end of the preceding Fall semester.]
 ====
 This meeting shall be open to all members contracted for the applicable term, and members not contracted for the applicable term will not be able to vote on the elected positions for that term.
 ====
